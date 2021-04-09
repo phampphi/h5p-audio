@@ -28,7 +28,7 @@ H5P.Audio = (function ($) {
     }
 
     this.params = $.extend({}, {
-      playerMode: 'minimalistic',
+      playerMode: 'full',
       fitToWrapper: false,
       controls: true,
       autoplay: false,
@@ -407,6 +407,10 @@ H5P.Audio.prototype.isEnabledToggleButton = function () {
 H5P.Audio.prototype.disableAudio = function () {
   if (this.audio !== undefined) 
     this.audio.controls = false;
+}
+
+H5P.Audio.prototype.hasTranscript = function () {
+  return !!this.params.transcript;
 }
 
 /** @constant {string} */
